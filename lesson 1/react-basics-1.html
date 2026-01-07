@@ -3,19 +3,12 @@
 
 <head>
     <title>React Basics</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-size: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-    </style>
 </head>
 
 <body>
     <div class="js-container"></div>
 
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
     <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
 
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
@@ -23,10 +16,18 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
+
+        const currentDate = dayjs().format('MMMM D')
+        const currentTime = dayjs().format('HH:mm:ss')
+        console.log(currentTime);
+        
+
+
         const priceOfSocks = 10;
         const priceOfTshirt = 8;
+        const shippingCost = 5;
         const productCost = priceOfSocks + (2 * priceOfTshirt)
-        console.log(productCost);
+        const totalCost = shippingCost + productCost
 
         const div = (
             <div>
@@ -38,13 +39,20 @@
                 <button>Add to Cart</button>
                 <br></br>
                 <p>Product cost: ₹ {productCost}</p>
+                <p>Shipping cost: ₹ {shippingCost}</p>
+                <p>Total cost: ₹ {totalCost}</p>
+                <button>Place your order</button>
+                <br></br>
+                <p>Today is {currentDate}</p>
             </div>
         );
         
 
         const container = document.querySelector('.js-container');
-        ReactDOM.createRoot(container).render(div);
+        ReactDOM.createRoot(container).render(div)
     </script>
+
+    
 </body>
 
 </html>
