@@ -20,8 +20,16 @@
         const currentDate = dayjs().format('MMMM D')
         const currentTime = dayjs().format('HH:mm:ss')
 
+        const container = document.querySelector('.js-container');
+        const root = ReactDOM.createRoot(container)
+        root.render(currentTime)
         
+        setInterval(() => {
+            const paragraph = <p>Current time is {dayjs().format('HH:mm:ss')}</p>
+            root.render(paragraph)
+        }, 1000);
 
+        
     </script>
 
 
