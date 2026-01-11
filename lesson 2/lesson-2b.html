@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>React Basics</title>
+</head>
+
+<body style="background-color: rgb(80, 79, 79); color: rgb(182, 181, 181);">
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+    <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        function ProductDetails({ name, price, discountPrice, imageSrc }) {
+            return (
+                <>
+                    <img src={imageSrc} width="150" />
+                    <p>{name}</p>
+                    {discountPrice ? (
+                        <>
+                            <p><del>Price: ₹{price}</del></p>
+                            <p>Discount price: ₹{discountPrice}</p>
+                        </>
+                    ) :
+                        (
+                            <p>Discount price: ₹{discountPrice}</p>
+                        )}
+                    <button>Add to cart</button>
+                </>
+            )
+        }
+
+        function App() {
+            return (
+                <>
+                    <ProductDetails
+                        imageSrc="socks.png"
+                        name="Cotton Socks"
+                        price="30"
+                        discountPrice="20"
+                    />
+                    <hr />
+                    <ProductDetails
+                        imageSrc="tennis-ball.png"
+                        name="Tennis balls"
+                        price="60"
+                    />
+                    <hr />
+                    <ProductDetails
+                        imageSrc="T-shirt.png"
+                        name="Plain T-Shirt"
+                        price="70"
+                        discountPrice="50"
+                    />
+                </>
+            )
+        }
+
+
+        const container = document.querySelector('.js-container');
+        ReactDOM.createRoot(container).render(<App />)
+    </script>
+
+
+
+</body>
+
+</html>
