@@ -9,20 +9,22 @@
             color: aliceblue;
             font-family: 'Courier New', Courier, monospace;
         }
-        .input-email{
-            padding: 10px;
-            border-radius: 8px;
-            border: none;
-            margin: 10px;
-        }
-        .input-password{
+
+        .input-email {
             padding: 10px;
             border-radius: 8px;
             border: none;
             margin: 10px;
         }
 
-        .login-btn{
+        .input-password {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin: 10px;
+        }
+
+        .login-btn {
             padding: 10px 15px;
             border-radius: 10px;
             font-size: 15px;
@@ -32,7 +34,8 @@
             margin: 10px;
             cursor: pointer;
         }
-        .signup-btn{
+
+        .signup-btn {
             padding: 10px 15px;
             border-radius: 10px;
             font-size: 15px;
@@ -42,7 +45,8 @@
             margin: 10px;
             cursor: pointer;
         }
-        .password-show-btn{
+
+        .password-show-btn {
             padding: 10px 12px;
             border: none;
             border-radius: 10px;
@@ -63,15 +67,6 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-
-        function App() {
-            return (
-                <>
-                    <p>Hello, welcome to my website!</p>
-                    <Loginform />
-                </>
-            )
-        }
 
         function Loginform() {
 
@@ -96,6 +91,14 @@
             )
         }
 
+        function App() {
+            return (
+                <>
+                    <p>Hello, welcome to my website!</p>
+                    <Loginform />
+                </>
+            )
+        }
 
         const container = document.querySelector('.js-container');
         ReactDOM.createRoot(container).render(<App />)
